@@ -35,5 +35,34 @@ local lazyPlugins = {
 		},
 	},
 	{ "mhartington/formatter.nvim" },
+	{
+		"nvim-treesitter/nvim-treesitter",
+		build = ":TSUpdate",
+		config = function()
+			local configs = require("nvim-treesitter.configs")
+
+			configs.setup({
+				ensure_installed = {
+					"c",
+					"cpp",
+					"css",
+					"json",
+					"make",
+					"lua",
+					"vim",
+					"vimdoc",
+					"query",
+					"elixir",
+					"heex",
+					"javascript",
+					"html",
+					"typescript",
+				},
+				sync_install = false,
+				highlight = { enable = true },
+				indent = { enable = true },
+			})
+		end,
+	},
 }
 return lazyPlugins

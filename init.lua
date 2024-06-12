@@ -1,23 +1,23 @@
 --import keybinds
-require('keybinds')
+require("keybinds")
 
 --setup lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
 end
 
 vim.opt.rtp:prepend(lazypath)
 
 --load lazy.nvim plugins
-require("lazy").setup(require('lazy-plugins'), {})
+require("lazy").setup(require("lazy-plugins"), {})
 
 --colorscheme configuration
 require("tokyonight").setup(require("tokyonight-config"))
@@ -34,24 +34,23 @@ vim.opt.expandtab = true
 vim.wo.number = true
 
 --enable lsp
-require('lspconfig').tsserver.setup{}
-require('lspconfig').clangd.setup{}
+require("lspconfig").tsserver.setup({})
+require("lspconfig").clangd.setup({})
 
 --enable formatters
-require('formatter').setup({
-      filetype = {
-        lua = {require("formatter.filetypes.lua").stylua},
-        typescript = {require("formatter.filetypes.typescript").prettier},
-        typescriptreact = {require("formatter.filetypes.typescriptreact").prettier},
-        javascript = {require("formatter.filetypes.javascript").prettier},
-        javascriptreact = {require("formatter.filetypes.javascriptreact").prettier},
-        json = {require("formatter.filetypes.json").prettier},
-        css = {require("formatter.filetypes.css").prettier},
-        html = {require("formatter.filetypes.html").prettier},
-        c = {require("formatter.filetypes.c").clangformat},
-        cpp = {require("formatter.filetypes.cpp").clangformat},
-                
-      },
+require("formatter").setup({
+	filetype = {
+		lua = { require("formatter.filetypes.lua").stylua },
+		typescript = { require("formatter.filetypes.typescript").prettier },
+		typescriptreact = { require("formatter.filetypes.typescriptreact").prettier },
+		javascript = { require("formatter.filetypes.javascript").prettier },
+		javascriptreact = { require("formatter.filetypes.javascriptreact").prettier },
+		json = { require("formatter.filetypes.json").prettier },
+		css = { require("formatter.filetypes.css").prettier },
+		html = { require("formatter.filetypes.html").prettier },
+		c = { require("formatter.filetypes.c").clangformat },
+		cpp = { require("formatter.filetypes.cpp").clangformat },
+	},
 })
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
@@ -60,5 +59,6 @@ autocmd("BufWritePost", {
 	group = "__formatter__",
 	command = ":FormatWrite",
 })
+
 --greetings
-print('hello you fucking moron')
+print("hello you fucking moron")
