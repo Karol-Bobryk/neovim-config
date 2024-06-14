@@ -7,6 +7,11 @@ Clangd:
 
 `sudo apt install clangd`
 
+gcc:
+
+`sudo apt install gcc`
+
+
 Npm and nodejs:
 
 https://nodejs.org/en/download/package-manager/current
