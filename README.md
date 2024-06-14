@@ -11,6 +11,9 @@ gcc:
 
 `sudo apt install gcc`
 
+ripgrep:
+
+`sudo apt install ripgrep`
 
 Npm and nodejs:
 
