@@ -1,6 +1,3 @@
---import keybinds
-require("keybinds")
-
 --setup lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -59,6 +56,9 @@ autocmd("BufWritePost", {
 	group = "__formatter__",
 	command = ":FormatWrite",
 })
+
+--import keybinds
+require("keybinds")
 
 --greetings
 print("hello you fucking moron")
