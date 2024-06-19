@@ -7,9 +7,9 @@ Clangd:
 
 `sudo apt install clangd`
 
-gcc:
+gcc and libc6:
 
-`sudo apt install gcc`
+`sudo apt install gcc libc6-dev`
 
 ripgrep:
 
