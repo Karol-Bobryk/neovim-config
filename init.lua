@@ -29,6 +29,7 @@ vim.opt.expandtab = true
 
 --enable line numbering
 vim.wo.number = true
+vim.opt.relativenumber = true
 
 --enable lsp
 require("lspconfig").tsserver.setup({})
