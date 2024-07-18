@@ -34,6 +34,7 @@ vim.opt.relativenumber = true
 --enable lsp
 require("lspconfig").tsserver.setup({})
 require("lspconfig").clangd.setup({})
+require("lspconfig").zls.setup({})
 
 --enable formatters
 require("formatter").setup({
@@ -48,6 +49,7 @@ require("formatter").setup({
 		html = { require("formatter.filetypes.html").prettier },
 		c = { require("formatter.filetypes.c").clangformat },
 		cpp = { require("formatter.filetypes.cpp").clangformat },
+		zls = { require("formatter.filetypes.zig").zls },
 	},
 })
 local augroup = vim.api.nvim_create_augroup
