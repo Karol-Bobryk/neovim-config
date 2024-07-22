@@ -1,11 +1,11 @@
 # Dependencies
+Neovim:
+
+https://github.com/neovim/neovim/blob/master/INSTALL.md
+
 Nix package manager:
 
 `curl -L https://nixos.org/nix/install`
-
-Clangd:
-
-`sudo apt install clangd`
 
 gcc and libc6:
 
@@ -15,10 +15,20 @@ ripgrep:
 
 `sudo apt install ripgrep`
 
-Npm and nodejs:
+# Suggested additional packages
+## Clangd:
+Used for lsp and formatting in C
+
+`sudo apt install clangd clang-format`
+
+## Npm and nodejs:
+Used for installing prettier
 
 https://nodejs.org/en/download/package-manager/current
 
-Neovim:
+to install prettier globally use
 
-https://github.com/neovim/neovim/blob/master/INSTALL.md
+`npm i -g prettier`
+
+## For different lsps and formatters
+https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
