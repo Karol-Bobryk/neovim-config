@@ -31,4 +31,4 @@ to install prettier globally use
 `npm i -g prettier`
 
 ## For different lsps and formatters
-https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
