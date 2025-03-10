@@ -32,7 +32,7 @@ vim.wo.number = true
 vim.opt.relativenumber = true
 
 --enable lsp
-require("lspconfig").tsserver.setup({})
+require("lspconfig").ts_ls.setup({})
 require("lspconfig").clangd.setup({})
 require("lspconfig").zls.setup({})
 
