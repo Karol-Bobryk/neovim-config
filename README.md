@@ -32,3 +32,5 @@ to install prettier globally use
 
 ## For different lsps and formatters
 https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
+
+NOW NEW COMMENt plugin avaliable!!!@!?
