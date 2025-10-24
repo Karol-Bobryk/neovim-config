@@ -35,6 +35,7 @@ vim.opt.relativenumber = true
 require("lspconfig").ts_ls.setup({})
 require("lspconfig").clangd.setup({})
 require("lspconfig").zls.setup({})
+require("lspconfig").postgres_lsp.setup({})
 
 --enable formatters
 require("formatter").setup({
@@ -52,6 +53,7 @@ require("formatter").setup({
 		zls = { require("formatter.filetypes.zig").zls },
 	},
 })
+
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 augroup("__formatter__", { clear = true })
