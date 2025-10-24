@@ -77,6 +77,12 @@ autocmd("BufWritePost", {
 	command = ":FormatWrite",
 })
 
+--enable diagnostic lines
+vim.diagnostic.enable = true
+vim.diagnostic.config({
+	virtual_lines = true,
+})
+
 --enable comment keybind
 require("Comment").setup()
 
