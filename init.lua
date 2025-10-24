@@ -32,10 +32,25 @@ vim.wo.number = true
 vim.opt.relativenumber = true
 
 --enable lsp
-require("lspconfig").ts_ls.setup({})
-require("lspconfig").clangd.setup({})
-require("lspconfig").zls.setup({})
-require("lspconfig").postgres_lsp.setup({})
+local lsps = {
+	{ "ts_ls" },
+	{ "zls" },
+	{ "postgres_lsp" },
+	{ "clangd", {
+		init_options = {
+			fallbackFlags = { "--std=c++17" },
+		},
+	} },
+}
+--code stolen from https://xnacly.me/posts/2025/neovim-lsp-changes/
+--enable all, load a config if there is one
+for _, lsp in pairs(lsps) do
+	local name, config = lsp[1], lsp[2]
+	vim.lsp.enable(name)
+	if config then
+		vim.lsp.config(name, config)
+	end
+end
 
 --enable formatters
 require("formatter").setup({

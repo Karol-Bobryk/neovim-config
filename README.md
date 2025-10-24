@@ -1,5 +1,7 @@
 # Dependencies
 Neovim:
+> [!WARNING]
+> Use Neovim 0.11 or above
 
 https://github.com/neovim/neovim/blob/master/INSTALL.md
 
@@ -33,4 +35,4 @@ to install prettier globally use
 ## For different lsps and formatters
 https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
 
-NOW NEW COMMENt plugin avaliable!!!@!?
+NOW NEW cODE ACTIONS plugin avaliable!!!@!?
