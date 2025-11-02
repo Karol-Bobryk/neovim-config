@@ -17,10 +17,15 @@ vim.keymap.set({ "n", "x" }, "<leader>ca", function()
 	require("tiny-code-action").code_action()
 end, { noremap = true, silent = true })
 
---display diagnostic window
+--Display diagnostic window
 vim.keymap.set("n", "<leader>cdw", function()
 	vim.diagnostic.setqflist()
 end, { desc = "Show all Diagnostics in Quickfix Window" })
+
+--Go to definition
+vim.keymap.set("n", "<leader>gt", function()
+	vim.lsp.buf.definition()
+end, { desc = "Go to definition" })
 
 --Terminal keybinds
 vim.keymap.set("t", "<esc>", "<C-\\><C-N>", { noremap = true, silent = true })
