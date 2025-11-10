@@ -36,11 +36,15 @@ local lsps = {
 	{ "ts_ls" },
 	{ "zls" },
 	{ "postgres_lsp" },
-	{ "clangd", {
-		init_options = {
-			fallbackFlags = { "--std=c++17" },
+	{
+		"clangd",
+		{
+			cmd = { "clangd", "--log-verbose", "--clang-tidy" },
+			init_options = {
+				fallbackFlags = { "--std=c++17" },
+			},
 		},
-	} },
+	},
 }
 --code stolen from https://xnacly.me/posts/2025/neovim-lsp-changes/
 --enable all, load a config if there is one
