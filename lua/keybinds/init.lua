@@ -27,5 +27,9 @@ vim.keymap.set("n", "<leader>gt", function()
 	vim.lsp.buf.definition()
 end, { desc = "Go to definition" })
 
+--Go to diagnostics
+vim.keymap.set("n", "]g", vim.diagnostic.goto_next)
+vim.keymap.set("n", "[g", vim.diagnostic.goto_prev)
+
 --Terminal keybinds
 vim.keymap.set("t", "<esc>", "<C-\\><C-N>", { noremap = true, silent = true })
