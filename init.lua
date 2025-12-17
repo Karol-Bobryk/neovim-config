@@ -39,7 +39,7 @@ local lsps = {
 	{
 		"clangd",
 		{
-			cmd = { "clangd", "--log-verbose", "--clang-tidy" },
+			cmd = { "clangd", "--clang-tidy" },
 			init_options = {
 				fallbackFlags = { "--std=c++17" },
 			},
@@ -68,7 +68,16 @@ require("formatter").setup({
 		css = { require("formatter.filetypes.css").prettier },
 		html = { require("formatter.filetypes.html").prettier },
 		c = { require("formatter.filetypes.c").clangformat },
-		cpp = { require("formatter.filetypes.cpp").clangformat },
+		cpp = {
+			function()
+				return {
+					exe = "clang-format-20",
+					args = { "--assume-filename", vim.api.nvim_buf_get_name(0) },
+					stdin = true,
+				}
+			end,
+		},
+
 		zls = { require("formatter.filetypes.zig").zls },
 	},
 })
