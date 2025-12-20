@@ -1,10 +1,5 @@
 local lazyPlugins = {
-	{
-		"folke/tokyonight.nvim",
-		lazy = false,
-		priority = 1000,
-		opts = {},
-	},
+	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 	{
 		"dundalek/lazy-lsp.nvim",
 		dependencies = {
@@ -39,8 +34,7 @@ local lazyPlugins = {
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 		config = function()
-			local configs = require("nvim-treesitter.configs")
-
+			local configs = require("nvim-treesitter")
 			configs.setup({
 				ensure_installed = {
 					"c",

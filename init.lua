@@ -17,10 +17,10 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup(require("lazy-plugins"), {})
 
 --colorscheme configuration
-require("tokyonight").setup(require("tokyonight-config"))
+require("catppuccin").setup(require("theme-config"))
 
 --load colorscheme
-vim.cmd([[colorscheme tokyonight]])
+vim.cmd([[colorscheme catppuccin]])
 
 --enable human readable tabs
 vim.opt.tabstop = 2
@@ -71,7 +71,7 @@ require("formatter").setup({
 		cpp = {
 			function()
 				return {
-					exe = "clang-format-20",
+					exe = "clang-format",
 					args = { "--assume-filename", vim.api.nvim_buf_get_name(0) },
 					stdin = true,
 				}
