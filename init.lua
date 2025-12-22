@@ -37,6 +37,17 @@ local lsps = {
 	{ "zls" },
 	{ "postgres_lsp" },
 	{
+		"neocmake",
+		{
+			command = { "neocmakelsp", "stdio" },
+			filetypes = {
+				"cmake",
+				"CMakeLists.txt",
+			},
+			root_markers = { ".git", "build", "cmake" },
+		},
+	},
+	{
 		"clangd",
 		{
 			cmd = { "clangd", "--clang-tidy" },
@@ -46,7 +57,7 @@ local lsps = {
 		},
 	},
 }
---code stolen from https://xnacly.me/posts/2025/neovim-lsp-changes/
+--code stolen from https://xnacly.me/posts/2025/neovim-lsp-changescargo install neocmakelsp/
 --enable all, load a config if there is one
 for _, lsp in pairs(lsps) do
 	local name, config = lsp[1], lsp[2]
